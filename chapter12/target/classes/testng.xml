@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="用户管理系统">
+    <test>
+        <classes>
+            <class name="com.course.cases.LoginTest">
+                <methods>
+                    <include name="loginTrue"/>
+                    <include name="loginFalse"/>
+                </methods>
+            </class>
+            <class name="com.course.cases.AddUserTest">
+                <methods>
+                    <include name="addUser"/>
+                </methods>
+            </class>
+            <class name="com.course.cases.GetUserInfoListCase">
+                <methods>
+                    <include name="getUserInfoList"/>
+                </methods>
+            </class>
+            <class name="com.course.cases.GetUserInfoTest">
+                <methods>
+                    <include name="getUserInfo"/>
+                </methods>
+            </class>
+            <class name="com.course.cases.UpdateUserInfoTest">
+                <methods>
+                    <include name="updateUserInfo"/>
+                    <include name="deleteUser"/>
+                </methods>
+            </class>
+     </classes>
+
+    </test>
+</suite>

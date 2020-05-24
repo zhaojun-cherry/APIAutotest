@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course">
+    <select id="getUserCount" resultType="Integer">
+        select count(*) from User
+    </select>
+    <insert id="addUser" parameterType="com.course.model.User" >
+        insert into user(id,name,age)
+        values(#{id},#{name},#{age})
+    </insert>
+    <update id="updateUser" parameterType="com.course.model.User">
+        update user set name=#{name},age=#{age}
+        where id=#{id}
+    </update>
+    <delete id="deleteUser" parameterType="Integer">
+        delete from user where id=#{id}
+    </delete>
+    <!--获取用户信息-->
+    <select id="getUserInfo" parameterType="com.course.model.UpdateUserInfoCase" resultType="com.course.model.User">
+        select * from User
+        where id=#{userId}
+    </select>
+    <!--获取用户列表-->
+    <select id="getUserList" parameterType="com.course.model.GetUserListCase" resultType="com.course.model.User">
+        select * from User
+        <trim prefix="where" prefixOverrides="and">
+            <if test="null ！=userName and '' !=userName">
+                AND userName=#{userName}
+            </if>
+            <if test="null ！=sex and '' !=sex">
+                AND sex=#{sex}
+            </if>
+            <if test="null ！=age and '' !=age">
+                AND age=#{age}
+            </if>
+        </trim>
+        ;
+    </select>
+    <!--获取更新之后的数据-->
+    <select id="getUpdateUserInfo" parameterType="com.course.model.UpdateUserInfoCase"
+            resultType="com.course.model.User">
+        select * from user
+        <trim prefix="where" prefixOverrides="and">
+            <if test="null ！=userName and '' !=userName">
+                AND userName=#{userName}
+            </if>
+            <if test="null ！=sex and '' !=sex">
+                AND sex=#{sex}
+            </if>
+            <if test="null ！=age and '' !=age">
+                AND age=#{age}
+            </if>
+            <if test="null ！=permisson and '' !=permisson">
+                AND permisson=#{permisson}
+            </if>
+            <if test="null ！=isDelete and '' !=isDelete">
+                AND isDelete=#{isDelete}
+            </if>
+        </trim>
+           and id=#{userId}
+    </select>
+
+
+
+</mapper>
