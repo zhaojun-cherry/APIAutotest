@@ -1,0 +1,27 @@
+[
+  {
+    "description": "这是模拟post 请求",
+    "request": {
+      "uri": "/postdemo",
+      "method": "post"
+    },
+    "response": {
+      "text": "this is my post"
+
+    }
+  },
+  {
+    "description": "这是模拟带参数的post请求",
+    "request": {
+      "uri": "/postwithparameter",
+      "method":"post",
+      "forms":{
+           "name": "huawuque",
+           "age": "18"
+         }
+    },
+    "response": {
+      "text": "i am back with parameter"
+    }
+  }
+]

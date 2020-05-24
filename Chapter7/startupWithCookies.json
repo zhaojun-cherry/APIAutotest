@@ -1,0 +1,51 @@
+[
+  {
+    "description": "这是一个会返回cookies信息的get请求",
+    "request": {
+      "uri": "/getCookies",
+      "method": "get"
+    },
+    "response": {
+      "cookies": {
+        "login": "true"
+      },
+      "text": "恭喜你获得cookies信息成功"
+    }
+  },
+  {
+    "description": "模拟一个带cookies 信息的get请求",
+    "request":{
+      "uri": "/get/with/cookies",
+      "method": "get",
+      "cookies": {
+          "login": "true"
+      }
+    },
+    "response": {
+      "text": "this is content which need to reponse with cookies"
+    }
+  },
+  {
+    "description": "这是一个带cookies信息的post请求",
+    "request":{
+      "uri":"/post/with/cookies",
+      "method": "post",
+      "cookies":{
+        "login": "true"
+      },
+      "json": {
+        "name": "huawuque",
+        "age": "18"
+      }
+
+    },
+    "response": {
+      "status": 200,
+      "json": {
+        "huawuque": "success",
+        "status": "1"
+      }
+    }
+  }
+
+]

@@ -1,0 +1,16 @@
+sever:
+  port:8888
+logging:
+  path: logs
+  file: userManager.log
+spring:
+  application:
+    name: userManager
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/course?serverTimezone=UTC
+    username: root
+    password: 900504zj**
+
+
+
